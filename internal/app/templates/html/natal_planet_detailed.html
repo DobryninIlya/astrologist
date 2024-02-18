@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Результат</title>
+    <link rel="stylesheet" href="/static/css/natal_result.css">
+</head>
+<body>
+
+    <div class="header">
+        <img class="left-arrow" src="/static/img/arrow-left.svg" onclick="window.history.back()">
+        <p class="header_text">%v</p>
+    </div>
+    <div class="planets_detailed_page detailed_page">
+        <div class="main_block">
+            <div class="planets_aspects_block">
+                <img class="aspect_logo" alt="%v" src="/static/img/%v.png">
+                    <div class="aspect_badge_right_part">
+                        <p class="aspect_name">%v</p>
+                            <div class="aspect_desc">
+                                <p class="aspect_power_text">Сила:</p>
+                                <p class="aspect_power_text">%v</p>
+                             </div>
+                    <div class="aspect_desc">
+                        <p class="aspect_power_text">Гармония:</p>
+                        <p class="aspect_power_text">%v</p>
+                    </div>
+                </div>
+                <img class="right-arrow" src="/static/img/arrow-right.svg">
+            </div>
+        </div>
+        <div class="main_block main_block_children">
+            <div class="block_text">
+                %v</div>
+        </div>
+        %v
+        <div class="main_block main_block_children">
+            <div class="block_header_text">
+                Аспекты
+            </div>
+            <div class="block_text">
+                %v
+            </div>
+            %v
+        </div>
+    </div>
+</body>
+</html>

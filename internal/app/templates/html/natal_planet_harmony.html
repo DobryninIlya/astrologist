@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Результат</title>
+    <link rel="stylesheet" href="/static/css/natal_result.css">
+    <link rel="stylesheet" href="/static/css/tables.css">
+</head>
+<body>
+
+    <div class="header">
+        <img class="left-arrow" src="/static/img/arrow-left.svg" onclick="window.history.back()">
+        <p class="header_text">Сила и гармония</p>
+    </div>
+    <div class="planets_coordinates_page main_screen" id="planets_coordinates_page">
+            <div class="planets_coordinates_page_content">
+                <div class="main_block">
+                    <table id="planetTable"> %v </table>
+                </div>
+            </div>
+    </div>
+
+</body>
+
+<script>
+    document.querySelectorAll('font[color="#0000ff"]').forEach(function(font) {
+        font.setAttribute('color', '');
+        font.style = "font-family: 'StyreneAWeb-Regular', serif; font-size: 16px; ";
+    });
+    function showHiddenRows() {
+        var rows = document.querySelectorAll('tr[style="display: none;"]');
+        rows.forEach(function(row) {
+            // row.style.display = 'table-row';
+            row.style.display = '';
+        });
+    }
+
+
+    showHiddenRows();
+
+
+
+</script>
+</html>

@@ -1,0 +1,509 @@
+:root {
+    --primary-background-color: #212226;
+    --secondary-background-color: #35363A;
+    --primary-text-color: #DABB85;
+    --secondary-text-color: #FFFFFF;
+}
+
+@font-face {
+    src: url("fonts/StyreneAWeb-Medium.woff");
+    font-family: 'StyreneAWeb-Medium';
+    font-style: normal;
+    font-weight: 400;
+}
+
+@font-face {
+    src: url("fonts/StyreneAWeb-Light.woff");
+    font-family: 'StyreneAWeb-Light';
+    font-style: normal;
+    font-weight: 400;
+}
+
+@font-face {
+    src: url("fonts/StyreneAWeb-Regular.woff");
+    font-family: 'StyreneAWeb-Regular';
+    font-style: normal;
+    font-weight: 400;
+}
+
+
+@font-face {
+    src: url("fonts/StyreneAWeb-Thin.woff");
+    font-family: 'StyreneAWeb-Thin';
+    font-style: normal;
+    font-weight: 400;
+}
+
+@font-face {
+    src: url("fonts/StyreneAWeb-Bold.woff");
+    font-family: 'StyreneAWeb-Bold';
+    font-style: normal;
+    font-weight: 400;
+}
+
+@font-face {
+    src: url("fonts/HamburgSymbols.woff");
+    font-family: 'HamburgSymbols_v2';
+    font-style: normal;
+    font-weight: 400;
+}
+
+@font-face {
+    src: url("fonts/HamburgSymbols.ttf");
+    font-family: 'HamburgSymbols';
+    font-style: normal;
+    font-weight: 400;
+}
+
+body {
+    margin: 0px;
+    background-color: var(--primary-background-color);
+    color: var(--secondary-text-color);
+    font-family: 'Inter', sans-serif;
+    width: 100%;
+    max-width: 400px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.header {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    background-color: var(--secondary-background-color);
+    width: 100%;
+    padding: 0px;
+    height: 60px;
+}
+
+#main_screen {
+    padding-left: 14px;
+    padding-right: 14px;
+}
+
+.main_screen {
+    padding-left: 14px;
+    padding-right: 14px;
+}
+
+.header_text {
+    font-size: 20px;
+    font-weight: 300;
+    line-height: 100.52%;
+    letter-spacing: -0.065em;
+    color: var(--primary-text-color);
+    font-family: 'StyreneAWeb-Medium';
+    bottom: 20px;
+    height: 26px;
+    margin: 0px 0px 0px 16px;
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+    justify-content: end;
+}
+
+.main_block {
+    width: auto;
+    height: 100%;
+    background-color: var(--secondary-background-color);
+    border-radius: 20px;
+    padding: 14px;
+    /*margin: 10px 14px;*/
+    margin: 10px 0px;
+    box-sizing: border-box;
+
+}
+
+.user_name {
+    width: auto;
+    height: 26px;
+    font-size: 20px;
+    font-weight: 300;
+    line-height: 100.52%;
+    color: var(--primary-text-color);
+    font-family: 'StyreneAWeb-Medium', serif;
+    left: 0;
+    position: relative;
+}
+
+.user_data_container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    margin: 0px 0px 0px 0px;
+}
+
+.user_data_column {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    width: 50%;
+    height: 100%;
+    margin: 0px 0px 0px 0px;
+}
+
+.user_data_text {
+    font-size: 12px;
+    font-weight: 300;
+    line-height: 100.52%;
+    color: var(--primary-text-color);
+    font-family: 'StyreneAWeb-Light', serif;
+    margin: 0px 0px 0px 0px;
+    min-height: 15px;
+    /*overflow: hidden;*/
+}
+
+.user_data_text_answer {
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 100.52%;
+    color: var(--primary-text-color);
+    font-family: 'StyreneAWeb-Medium', serif;
+    margin: 0px 0px 0px 0px;
+    min-height: 18px;
+}
+
+.natal_chat_image {
+    width: 100%;
+    height: auto;
+    border-radius: 50%;
+}
+
+.menu_block {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: start;
+    justify-content: space-between;
+}
+
+.menu_item_block {
+    width: auto;
+    /*min-width: 140px;*/
+    height: 80px;
+    border-radius: 20px;
+    background-color: var(--secondary-background-color);
+    padding: 10px;
+    position: relative;
+    overflow: hidden;
+}
+
+.menu_item_text {
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 100.52%;
+    color: var(--primary-text-color);
+    font-family: 'StyreneAWeb-Medium', serif;
+    margin: 0px 0px 0px 0px;
+    max-width: 140px;
+    display: flex;
+    align-items: center;
+    /*justify-content: center;*/
+}
+
+.round-div {
+    border-radius: 50%;
+    position: absolute;
+    background-color: var(--primary-text-color);
+    width: 80px;
+    height: 80px;
+    right: -17px; /* Сдвигаем элемент вправо за пределы правого края родительского блока */
+    bottom: -20px;
+}
+.menu_item {
+    width: calc(48%);
+    margin-bottom: 5px;
+    margin-top: 5px;
+}
+
+/*.menu_item:nth-child(odd) .menu_item_block {*/
+/*    margin-right: 10px;*/
+/*}*/
+#karma_data {
+    width: 200%;
+    /*padding-left: 20px;*/
+    padding-right: 20px;
+
+}
+#karma_text {
+    padding-left: 6px;
+    padding-top: 4px;
+    max-width: 225px;
+    margin-bottom: 5px;
+}
+.menu_item_text_secondary {
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 100.52%;
+    color: var(--primary-text-color);
+    font-family: 'StyreneAWeb-Light', serif;
+    margin: 0px 0px 0px 0px;
+    max-width: 225px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-left: 6px;
+}
+
+.menu_item_thin_block {
+    width: 100%;
+    height: 80px;
+    border-radius: 20px;
+    background-color: var(--secondary-background-color);
+    padding: 10px;
+    position: relative;
+    overflow: hidden;
+}
+
+.karma_icon {
+    width: auto;
+    height: 100%;
+    right: 0px;
+    top: 0px;
+    position: absolute;
+}
+
+/*.menu_content {*/
+/*    padding-left:16px;*/
+/*    padding-right: 16px;*/
+/*}*/
+
+.karma_page_text {
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 130.52%;
+    color: var(--secondary-text-color);
+    font-family: 'StyreneAWeb-Thin', serif;
+    margin: 0px 0px 0px 0px;
+    padding-bottom: 20px;
+}
+
+.karma_logo {
+    float: left;
+    width: 50%;
+    max-width: 200px;
+    margin-right: 15px;
+}
+
+.karma_data_page_content {
+    padding: 16px;
+}
+
+.left-arrow {
+    width: 24px;
+    height: 24px;
+    margin: 16px 0px 10px 0px;
+}
+
+.main_block_children {
+    margin: 10px 0px;
+}
+
+.block_header_text {
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 130.52%;
+    color: var(--secondary-text-color);
+    font-family: 'StyreneAWeb-Regular', serif;
+    margin: 0px 0px 0px 0px;
+    padding-bottom: 10px;
+}
+
+.block_text {
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 130.52%;
+    color: var(--secondary-text-color);
+    font-family: 'StyreneAWeb-Thin', serif;
+    margin: 0px 0px 0px 0px;
+}
+
+
+.planets_aspects_block {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    margin: 0px 0px 0px 0px;
+    justify-content: start;
+}
+
+.aspect_logo {
+    width: 70px;
+    height: 70px;
+    justify-content: flex-start;
+    align-self: start;
+    margin-right: 20px;
+}
+
+.aspect_name {
+    font-size: 20px;
+    font-weight: 300;
+    line-height: 130.52%;
+    color: var(--secondary-text-color);
+    font-family: 'StyreneAWeb-Regular', serif;
+    margin: 0px 0px 0px 0px;
+    padding-left: 10px;
+    height: 26px;
+}
+
+.aspect_desc{
+    display: flex;
+    flex-direction: row;
+    align-items: start;
+    margin-top: 5px;
+}
+
+.aspect_power_text {
+    height: 20px;
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 130.52%;
+    color: var(--secondary-text-color);
+    font-family: 'StyreneAWeb-Regular', serif;
+    margin: 0px 0px 0px 0px;
+    padding-left: 10px;
+}
+
+.right-arrow {
+    width: 24px;
+    height: 24px;
+    margin-left: auto;
+}
+
+.detailed_page {
+    margin: 0px;
+    padding: 16px;
+}
+
+.aspect_list {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: start;
+    width: 100%;
+}
+
+.aspect_desc_left {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: space-between;
+    margin: 0px 0px 0px 0px;
+    height: 43px;
+    color: var(--secondary-text-color);
+}
+#autocomplete-list {
+    /*border: 1px solid #d4d4d4;*/
+    border-radius: 10px;
+    z-index: 9999;
+    width: 70%;
+    max-height: 200px;
+    overflow-y: auto;
+    margin-top: 10px;
+    box-sizing: border-box;
+    background: var(--primary-background-color);
+    padding: 10px;
+    color: var(--secondary-text-color);
+    opacity: 80%;
+}
+
+ul:empty {
+    display: none;
+}
+
+li {
+    margin-top:5px;
+    margin-bottom:5px;
+}
+
+.aspect_desc_type_text {
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 130.52%;
+    color: var(--primary-text-color);
+    font-family: 'StyreneAWeb-Thin', serif;
+    margin: 0px 0px 0px 0px;
+}
+
+.aspect_link_type_text {
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 130.52%;
+    color: var(--secondary-text-color);
+    font-family: 'StyreneAWeb-Regular', serif;
+    margin: 0px 0px 0px 0px;
+    color: var(--primary-text-color);
+}
+
+.aspect_list_element {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: start;
+    width: 100%;
+    border-radius: 15px;
+    background: var(--primary-background-color);
+    padding: 16px 10px;
+    margin: 10px 0px 0px;
+}
+
+.moon_image {
+    display: block;
+    max-width: 200px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.loader {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 9999;
+    background: url('/static/img/loader.gif') 50% 50% no-repeat rgb(249,249,249);
+}
+
+
+
+
+/* Стили для модального окна */
+.modal {
+    display: none; /* По умолчанию модальное окно скрыто */
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.4); /* Прозрачный цвет фона */
+}
+
+.modal-content {
+    background-color: var(--secondary-background-color);
+    margin: 15% auto;
+    padding: 20px;
+    width: 80%;
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}

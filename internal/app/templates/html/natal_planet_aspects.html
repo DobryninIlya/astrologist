@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Результат</title>
+    <link rel="stylesheet" href="/static/css/natal_result.css">
+</head>
+<body>
+
+    <div class="header">
+        <img class="left-arrow" src="/static/img/arrow-left.svg" onclick="window.history.back()">
+        <p class="header_text">Планеты, аспекты, планеты, орбиты</p>
+    </div>
+    <div class="planets_aspects_page main_screen" id="planets_aspects_page">
+
+        <div class="main_block" onclick="window.location = '/natalchart/sun' + window.location.search">
+            <div class="planets_aspects_block">
+                <img class="aspect_logo" alt="sun" src="/static/img/sun.png">
+                <div class="aspect_badge_right_part">
+                    <p class="aspect_name">Солнце</p>
+                    <div class="aspect_desc">
+                        <p class="aspect_power_text">Сила:</p>
+                        <p class="aspect_power_text">%v</p>
+                    </div>
+                    <div class="aspect_desc">
+                        <p class="aspect_power_text">Гармония:</p>
+                        <p class="aspect_power_text">%v</p>
+                    </div>
+                </div>
+                <img class="right-arrow" src="/static/img/arrow-right.svg">
+            </div>
+        </div>
+
+        <div class="main_block" onclick="window.location = '/natalchart/moon' + window.location.search">
+            <div class="planets_aspects_block">
+                <img class="aspect_logo" alt="moon" src="/static/img/moon.png">
+                <div class="aspect_badge_right_part">
+                    <p class="aspect_name">Луна</p>
+                    <div class="aspect_desc">
+                        <p class="aspect_power_text">Сила:</p>
+                        <p class="aspect_power_text">%v</p>
+                    </div>
+                    <div class="aspect_desc">
+                        <p class="aspect_power_text">Гармония:</p>
+                        <p class="aspect_power_text">%v</p>
+                    </div>
+                </div>
+                <img class="right-arrow" src="/static/img/arrow-right.svg">
+            </div>
+        </div>
+
+        <div class="main_block" onclick="window.location = '/natalchart/mercury' + window.location.search">
+            <div class="planets_aspects_block">
+                <img class="aspect_logo" alt="mercury" src="/static/img/mercury.png">
+                <div class="aspect_badge_right_part">
+                    <p class="aspect_name">Меркурий</p>
+                    <div class="aspect_desc">
+                        <p class="aspect_power_text">Сила:</p>
+                        <p class="aspect_power_text">%v</p>
+                    </div>
+                    <div class="aspect_desc">
+                        <p class="aspect_power_text">Гармония:</p>
+                        <p class="aspect_power_text">%v</p>
+                    </div>
+                </div>
+                <img class="right-arrow" src="/static/img/arrow-right.svg">
+            </div>
+        </div>
+
+            <div class="main_block" onclick="window.location = '/natalchart/venus' + window.location.search">
+                <div class="planets_aspects_block">
+                    <img class="aspect_logo" alt="venus" src="/static/img/venus.png">
+                    <div class="aspect_badge_right_part">
+                        <p class="aspect_name">Венера</p>
+                        <div class="aspect_desc">
+                            <p class="aspect_power_text">Сила:</p>
+                            <p class="aspect_power_text">%v</p>
+                        </div>
+                        <div class="aspect_desc">
+                            <p class="aspect_power_text">Гармония:</p>
+                            <p class="aspect_power_text">%v</p>
+                        </div>
+                    </div>
+                    <img class="right-arrow" src="/static/img/arrow-right.svg">
+                </div>
+            </div>
+
+            <div class="main_block" onclick="window.location = '/natalchart/mars' + window.location.search">
+                <div class="planets_aspects_block">
+                    <img class="aspect_logo" alt="mars" src="/static/img/mars.png">
+                    <div class="aspect_badge_right_part">
+                        <p class="aspect_name">Марс</p>
+                        <div class="aspect_desc">
+                            <p class="aspect_power_text">Сила:</p>
+                            <p class="aspect_power_text">%v</p>
+                        </div>
+                        <div class="aspect_desc">
+                            <p class="aspect_power_text">Гармония:</p>
+                            <p class="aspect_power_text">%v</p>
+                        </div>
+                    </div>
+                    <img class="right-arrow" src="/static/img/arrow-right.svg">
+                </div>
+            </div>
+
+            <div class="main_block" onclick="window.location = '/natalchart/jupiter' + window.location.search">
+                <div class="planets_aspects_block">
+                    <img class="aspect_logo" alt="jupiter" src="/static/img/jupiter.png">
+                    <div class="aspect_badge_right_part">
+                        <p class="aspect_name">Юпитер</p>
+                        <div class="aspect_desc">
+                            <p class="aspect_power_text">Сила:</p>
+                            <p class="aspect_power_text">%v</p>
+                        </div>
+                        <div class="aspect_desc">
+                            <p class="aspect_power_text">Гармония:</p>
+                            <p class="aspect_power_text">%v</p>
+                        </div>
+                    </div>
+                    <img class="right-arrow" src="/static/img/arrow-right.svg">
+                </div>
+            </div>
+
+
+            <div class="main_block" onclick="window.location ='/natalchart/saturn' + window.location.search">
+                <div class="planets_aspects_block">
+                    <img class="aspect_logo" alt="saturn" src="/static/img/saturn.png">
+                    <div class="aspect_badge_right_part">
+                        <p class="aspect_name">Сатурн</p>
+                        <div class="aspect_desc">
+                            <p class="aspect_power_text">Сила:</p>
+                            <p class="aspect_power_text">%v</p>
+                        </div>
+                        <div class="aspect_desc">
+                            <p class="aspect_power_text">Гармония:</p>
+                            <p class="aspect_power_text">%v</p>
+                        </div>
+                    </div>
+                    <img class="right-arrow" src="/static/img/arrow-right.svg">
+                </div>
+            </div>
+
+
+            <div class="main_block" onclick="window.location = '/natalchart/uranus' + window.location.search">
+                <div class="planets_aspects_block">
+                    <img class="aspect_logo" alt="uranus" src="/static/img/uranus.png">
+                    <div class="aspect_badge_right_part">
+                        <p class="aspect_name">Уран</p>
+                        <div class="aspect_desc">
+                            <p class="aspect_power_text">Сила:</p>
+                            <p class="aspect_power_text">%v</p>
+                        </div>
+                        <div class="aspect_desc">
+                            <p class="aspect_power_text">Гармония:</p>
+                            <p class="aspect_power_text">%v</p>
+                        </div>
+                    </div>
+                    <img class="right-arrow" src="/static/img/arrow-right.svg">
+                </div>
+            </div>
+
+            <div class="main_block" onclick="window.location ='/natalchart/neptune' + window.location.search">
+                <div class="planets_aspects_block">
+                    <img class="aspect_logo" alt="neptune" src="/static/img/neptune.png">
+                    <div class="aspect_badge_right_part">
+                        <p class="aspect_name">Нептун</p>
+                        <div class="aspect_desc">
+                            <p class="aspect_power_text">Сила:</p>
+                            <p class="aspect_power_text">%v</p>
+                        </div>
+                        <div class="aspect_desc">
+                            <p class="aspect_power_text">Гармония:</p>
+                            <p class="aspect_power_text">%v</p>
+                        </div>
+                    </div>
+                    <img class="right-arrow" src="/static/img/arrow-right.svg">
+                </div>
+            </div>
+
+
+            <div class="main_block" onclick="window.location ='/natalchart/pluto' + window.location.search">
+                <div class="planets_aspects_block">
+                    <img class="aspect_logo" alt="pluto" src="/static/img/pluto.png">
+                    <div class="aspect_badge_right_part">
+                        <p class="aspect_name">Плутон</p>
+                        <div class="aspect_desc">
+                            <p class="aspect_power_text">Сила:</p>
+                            <p class="aspect_power_text">%v</p>
+                        </div>
+                        <div class="aspect_desc">
+                            <p class="aspect_power_text">Гармония:</p>
+                            <p class="aspect_power_text">%v</p>
+                        </div>
+                    </div>
+                    <img class="right-arrow" src="/static/img/arrow-right.svg">
+                </div>
+            </div>
+
+            <div class="main_block" onclick="window.location ='/natalchart/charon' + window.location.search">
+                <div class="planets_aspects_block">
+                    <img class="aspect_logo" alt="charon" src="/static/img/charon.png">
+                    <div class="aspect_badge_right_part">
+                        <p class="aspect_name">Хирон</p>
+                    </div>
+                    <img class="right-arrow" src="/static/img/arrow-right.svg">
+                </div>
+            </div>
+        </div>
+</body>
+</html>

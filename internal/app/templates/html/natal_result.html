@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta http-equiv="Cache-Control" content="max-age=3600"> <!-- Кэшировать на 1 час -->
+    <meta http-equiv="Expires" content="Sun, 01 Jan 2024 00:00:00 GMT"> <!-- Устанавливаем дату истечения кэша -->
+    <title>Результат</title>
+    <link rel="stylesheet" href="/static/css/natal_result.css">
+</head>
+<body>
+<script>
+    window.onload = function() {
+        // Когда страница полностью загружена, скрываем загрузчик
+        document.querySelector('.loader').style.display = 'none';
+    };
+</script>
+<div class="header">
+    <p class="header_text">Натальная карта</p>
+</div>
+<div id="main_screen">
+    <div class="loader"></div>
+        <div class="main_block">
+            <div class="user_name">
+                Илья
+            </div>
+            <div class="user_data_container">
+                <div class="left_user_data user_data_column">
+                    <div class="birthday">
+                        <p class="user_data_text">Дата рождения</p>
+                        <p class="user_data_text_answer">12.12.2000</p>
+                    </div>
+                    <div class="birthtime">
+                        <p class="user_data_text">Время рождения</p>
+                        <p class="user_data_text_answer">12:00</p>
+                    </div>
+                </div>
+                <div class="right_user_data user_data_column">
+                    <div class="city">
+                        <p class="user_data_text">Место рождения</p>
+                        <p class="user_data_text_answer">Москва, GMT +3</p>
+                    </div>
+                    <div class="timezone">
+                        <p class="user_data_text">Система расчета домов</p>
+                        <p class="user_data_text_answer">Плацидус</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="main_block">
+                <img class="natal_chat_image" src="https://geocult.ru/swetest/app/natal/natal_png.php?rx1=%20%20%20%20%20%20%20%20%20%20%20%20%20RR&p1=a:37:{i:0;s:11:%22%2087.6997755%22;i:1;s:12:%22%20197.3245418%22;i:2;s:11:%22%2091.8604865%22;i:3;s:11:%22%2042.1270673%22;i:4;s:11:%22%2035.8047500%22;i:5;s:12:%22%20169.3555413%22;i:6;s:12:%22%20102.1209395%22;i:7;s:11:%22%2074.1171512%22;i:8;s:12:%22%20183.6573712%22;i:9;s:12:%22%20128.6564525%22;i:10;s:12:%22%20177.5437695%22;i:11;s:12:%22%20204.3408136%22;i:12;d:317.4658139;i:13;s:11:%22%2099.2467684%22;i:14;d:279.2467684;i:15;d:290.5201224;i:16;s:11:%22%20%202.0794299%22;i:17;s:12:%22%20180.8953561%22;i:18;s:12:%22%20203.8653190%22;i:19;s:12:%22%20233.7631041%22;i:20;s:12:%22%20271.2343707%22;i:21;s:12:%22%20308.5202998%22;i:22;s:12:%22%20338.1686574%22;i:23;s:11:%22%20%200.8953561%22;i:24;s:11:%22%2023.8653190%22;i:25;s:11:%22%2053.7631041%22;i:26;s:11:%22%2091.2343707%22;i:27;s:12:%22%20128.5202998%22;i:28;s:12:%22%20158.1686574%22;i:29;s:12:%22%20180.8953561%22;i:30;s:11:%22%2091.2343707%22;i:31;s:11:%22%2091.3454168%22;i:32;s:11:%22%20%202.0794299%22;i:33;s:12:%22%20181.4664449%22;i:34;s:12:%22%20184.0457566%22;i:35;s:12:%22%20181.1325414%22;i:36;s:11:%22%20%204.0457566%22;}&hc1=a:17:{i:1;s:12:%22%20180.8953561%22;i:2;s:12:%22%20203.8653190%22;i:3;s:12:%22%20233.7631041%22;i:4;s:12:%22%20271.2343707%22;i:5;s:12:%22%20308.5202998%22;i:6;s:12:%22%20338.1686574%22;i:7;s:11:%22%20%200.8953561%22;i:8;s:11:%22%2023.8653190%22;i:9;s:11:%22%2053.7631041%22;i:10;s:11:%22%2091.2343707%22;i:11;s:12:%22%20128.5202998%22;i:12;s:12:%22%20158.1686574%22;i:13;s:12:%22%20180.8953561%22;i:14;s:11:%22%2091.2343707%22;i:15;s:11:%22%2091.3454168%22;i:16;s:11:%22%20%202.0794299%22;i:17;s:12:%22%20181.4664449%22;}&ubt1=1&hpos=a:37:{i:0;i:9;i:1;i:1;i:2;i:10;i:3;i:8;i:4;i:8;i:5;i:12;i:6;i:10;i:7;i:9;i:8;i:1;i:9;i:11;i:10;i:12;i:11;i:2;i:12;i:5;i:13;i:10;i:14;s:0:%22%22;i:15;i:4;i:16;i:7;i:17;s:15:%22house%20%201%20%20%20%20%20%20%20%22;i:18;s:15:%22house%20%202%20%20%20%20%20%20%20%22;i:19;s:15:%22house%20%203%20%20%20%20%20%20%20%22;i:20;s:15:%22house%20%204%20%20%20%20%20%20%20%22;i:21;s:15:%22house%20%205%20%20%20%20%20%20%20%22;i:22;s:15:%22house%20%206%20%20%20%20%20%20%20%22;i:23;s:15:%22house%20%207%20%20%20%20%20%20%20%22;i:24;s:15:%22house%20%208%20%20%20%20%20%20%20%22;i:25;s:15:%22house%20%209%20%20%20%20%20%20%20%22;i:26;s:15:%22house%2010%20%20%20%20%20%20%20%22;i:27;s:15:%22house%2011%20%20%20%20%20%20%20%22;i:28;s:15:%22house%2012%20%20%20%20%20%20%20%22;i:29;s:15:%22Ascendant%20%20%20%20%20%20%22;i:30;s:15:%22MC%20%20%20%20%20%20%20%20%20%20%20%20%20%22;i:31;s:15:%22ARMC%20%20%20%20%20%20%20%20%20%20%20%22;i:32;s:15:%22Vertex%20%20%20%20%20%20%20%20%20%22;i:33;s:15:%22equat.%20Asc.%20%20%20%20%22;i:34;s:15:%22co-Asc.%20W.Koch%20%22;i:35;s:15:%22co-Asc%20Munkasey%22;i:36;s:15:%22Polar%20Asc.%20%20%20%20%20%22;}" alt="natal_char">
+        </div>
+        <div class="menu_content">
+        <div class="menu_block">
+            <div class="menu_item" id="planets_coordinates"  onclick="window.location = '/natalchart/planets_coordinates' + window.location.search">
+                <div class="menu_item_block">
+                    <p class="menu_item_text">Положение планет</p>
+                    <div class="round-div"></div>
+                </div>
+                <div class="menu_item">
+                </div>
+            </div>
+            <div class="menu_item" id="planets_garmony" onclick="window.location = '/natalchart/planets_harmony' + window.location.search">
+                <div class="menu_item_block">
+                    <p class="menu_item_text">Сила и гармония</p>
+                    <div class="round-div"></div>
+                </div>
+                <div class="menu_item">
+                </div>
+            </div>
+            <div class="menu_item" id="planets_aspects" onclick="window.location = '/natalchart/planets_aspects_orbits' + window.location.search">
+                <div class="menu_item_block">
+                    <p class="menu_item_text">Аспекты</p>
+                    <div class="round-div"></div>
+                </div>
+                <div class="menu_item">
+                </div>
+            </div>
+            <div class="menu_item" id="planets_configurations" onclick="window.location = '/natalchart/planets_aspects' + window.location.search">
+                <div class="menu_item_block">
+                    <p class="menu_item_text">Конфигурации</p>
+                    <div class="round-div"></div>
+                </div>
+                <div class="menu_item">
+                </div>
+            </div>
+            <div class="menu_item" id="karma_data" onclick="window.location = '/natalchart/karma' + window.location.search">
+                <div class="menu_item_thin_block">
+                    <p class="menu_item_text" id="karma_text">Кармические показатели</p>
+                    <p class="menu_item_text_secondary">Разбирите прошлое для лучшего будущего</p>
+                    <img class="karma_icon" src="/static/img/karma-logo.svg">
+                </div>
+            </div>
+            <div class="menu_item" id="moon_nodes" onclick="window.location = '/natalchart/description/moon_nodes' + window.location.search">
+                <div class="menu_item_block">
+                    <p class="menu_item_text">Лунные узлы</p>
+                    <div class="round-div"></div>
+                </div>
+                <div class="menu_item">
+                </div>
+            </div>
+            <div class="menu_item"  onclick="window.location = '/natalchart/description/lilit' + window.location.search">
+                <div class="menu_item_block">
+                    <p class="menu_item_text">Лилит</p>
+                    <div class="round-div"></div>
+                </div>
+                <div class="menu_item">
+                </div>
+            </div>
+            <div class="menu_item"  onclick="window.location = '/natalchart/description/selena' + window.location.search">
+                <div class="menu_item_block">
+                    <p class="menu_item_text">Селена</p>
+                    <div class="round-div"></div>
+                </div>
+                <div class="menu_item">
+                </div>
+            </div>
+        </div>
+        </div>
+    </div>
+
+
+</body>
+</html>
