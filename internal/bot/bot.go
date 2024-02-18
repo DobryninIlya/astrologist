@@ -16,6 +16,10 @@ type Bot struct {
 	ctx     context.Context
 }
 
+const (
+	UnknownCommand = "Я не понял тебя. Нажми на кнопку"
+)
+
 func NewBot(ctx context.Context, log *logrus.Logger, token string) (*Bot, error) {
 	bot, err := tgbotapi.NewBotAPI(token)
 	if err != nil {
@@ -36,25 +40,31 @@ func NewBot(ctx context.Context, log *logrus.Logger, token string) (*Bot, error)
 
 func (b *Bot) HandleUpdates() {
 	for update := range b.updates {
+		var exitFlag bool
 		if update.Message == nil {
 			continue
 		}
 		b.log.Printf("[%s] %s", update.Message.From.UserName, update.Message.Text)
-		if update.Message == nil {
-			continue // Обрабатываем только сообщения с текстом
-		}
 		lowerText := strings.ToLower(update.Message.Text)
 		for _, cmd := range commands.CommandList.Commands {
+			if exitFlag {
+				break
+			}
 			for _, key := range cmd.Keys {
 				if key == lowerText {
 					err := cmd.Processor(b.bot, nil, update)
 					if err != nil {
 						b.log.Error(err)
 					}
+					exitFlag = true
+					break
 				}
 			}
 		}
-		//msg := tgbotapi.NewMessage(update.Message.Chat.ID, update.Message.Text)
-		//b.bot.Send(msg)
+		if exitFlag {
+			continue
+		}
+		msg := tgbotapi.NewMessage(update.Message.Chat.ID, UnknownCommand)
+		b.bot.Send(msg)
 	}
 }

@@ -2,6 +2,7 @@ package commands
 
 import (
 	"astrologist/internal/app/store/sqlstore"
+	"astrologist/internal/bot/commands/cmd"
 	tgbotapi "github.com/go-telegram-bot-api/telegram-bot-api/v5"
 	//cmd "astrologist/internal/bot/commands/cmd"
 )
@@ -12,6 +13,9 @@ var (
 
 func init() {
 	CommandList = Commands{Commands: make([]Command, 0)}
+	RegisterCommand([]string{"/start", "start"}, cmd.StartCommandProcessor, "Start command")
+	RegisterCommand([]string{"натальная карта", "рассчитать", "расклад"}, cmd.AstrologCommandProcessor, "Start command")
+
 }
 
 type Commands struct {
