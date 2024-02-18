@@ -1,3 +1,0 @@
-database_url = "host=localhost user=botkai password=passwordfjdk dbname=botdb sslmode=disable options='--client_encoding=UTF8'"
-bind_addr = ":8383"
-token = "test"
