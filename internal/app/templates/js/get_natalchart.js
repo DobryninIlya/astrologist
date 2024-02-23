@@ -20,8 +20,16 @@ function validateData() {
     var year = document.getElementById('year').value;
     var hour = document.getElementById('hour').value;
     var minute = document.getElementById('minute').value;
+    var birth_place = document.getElementById('birth_place').value;
+    var latitude = document.getElementById('latitude').value;
+    var longitude = document.getElementById('longitude').value;
 
-    if (name === '' || day === '' || month === '' || year === '' || hour === '' || minute === '' ) {
+    if (latitude=="" && longitude=="") {
+        showModal("Пожалуйста, выберите место рождения из выпадающего списка или введите точные координаты, если поиск не дал результатов")
+        return false;
+    }
+
+    if (name === '' || day === '' || month === '' || year === '')  {
         showModal('Пожалуйста, заполните все поля формы.');
         return false;
     }
