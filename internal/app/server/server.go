@@ -63,6 +63,7 @@ func (a *App) configureRouter() {
 		r.Get("/karma", handlers.NewKarmaHandler(a.store, a.logger))
 		r.Get("/{planet}", handlers.NewPlanetDetailedHandler(a.store, a.logger))
 		r.Get("/description/{planet}", handlers.NewDescriptionPlanetHandler(a.store, a.logger))
+		r.Get("/aspect/{name}", handlers.NewAspectDetailedHandler(a.store, a.logger))
 	})
 	a.router.Handle("/static/css/*", http.StripPrefix("/static/css/", cssHandler(http.FileServer(http.Dir(filepath.Join("internal", "app", "templates", "css"))))))
 	a.router.Handle("/static/js/*", http.StripPrefix("/static/js/", http.FileServer(http.Dir(filepath.Join("internal", "app", "templates", "js")))))

@@ -68,3 +68,14 @@ type LilitData struct {
 	Header              string
 	DetailedDescription string
 }
+
+type AspectDetailedPage struct {
+	Header           string
+	Description      string
+	AspectParagraphs []AspectDetailedPageElement
+}
+
+type AspectDetailedPageElement struct {
+	Header      string
+	Description string
+}

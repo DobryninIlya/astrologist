@@ -25,6 +25,7 @@ autocompleteList.addEventListener('click', function(event) {
     // Проверяем, что клик был по элементу списка
     if (event.target.tagName === 'LI') {
         handleAutocompleteItemClick(event);
+        autocompleteList.style.display = 'none';
     }
 });
 

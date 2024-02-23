@@ -7,11 +7,13 @@ import (
 	"io"
 	"log"
 	"net/http"
+	"strings"
 )
 
 const (
-	mainURL  = "https://geocult.ru/"
-	natalURL = mainURL + "natalnaya-karta-onlayn-raschet"
+	mainURL        = "https://geocult.ru/"
+	natalURL       = mainURL + "natalnaya-karta-onlayn-raschet"
+	aspectPagesURL = mainURL + "natalnaya-karta/"
 )
 
 func GetNatalChart(input models.NatalCardInput) (models.NatalCardOutput, error) {
@@ -153,4 +155,67 @@ func getNatalChartImages(doc *goquery.Document) (string, string) {
 		}
 	})
 	return mainImage, bottomImage
+}
+
+func GetAspectDetailedPage(name string) (models.AspectDetailedPage, error) {
+	resp, err := http.Get(aspectPagesURL + name)
+	if err != nil {
+		return models.AspectDetailedPage{}, err
+	}
+	defer resp.Body.Close()
+	doc, err := goquery.NewDocumentFromReader(resp.Body)
+	if err != nil {
+		return models.AspectDetailedPage{}, err
+	}
+	return parseAspectDetailed(doc), nil
+}
+
+func parseAspectDetailed(doc *goquery.Document) models.AspectDetailedPage {
+	var page models.AspectDetailedPage
+	var elements []models.AspectDetailedPageElement
+	var element *models.AspectDetailedPageElement
+	var descriptionBuilder strings.Builder
+	var elementDescriptionBuilder strings.Builder
+
+	doc.Find("h1.entry-title.fl-l").Each(func(i int, s *goquery.Selection) {
+		page.Header = s.Text()
+	})
+
+	doc.Find("#tr-content").Each(func(i int, s *goquery.Selection) {
+		s.Children().Each(func(i int, s *goquery.Selection) {
+			switch goquery.NodeName(s) {
+			case "p":
+				text := s.Text()
+				if element == nil {
+					if descriptionBuilder.Len() > 0 {
+						descriptionBuilder.WriteString("\n")
+					}
+					descriptionBuilder.WriteString(text)
+				} else {
+					if elementDescriptionBuilder.Len() > 0 {
+						elementDescriptionBuilder.WriteString("\n")
+					}
+					elementDescriptionBuilder.WriteString(text)
+				}
+			case "h2", "h3":
+				if element != nil {
+					element.Description = elementDescriptionBuilder.String()
+					elements = append(elements, *element)
+					elementDescriptionBuilder.Reset()
+				}
+				element = &models.AspectDetailedPageElement{
+					Header: s.Text(),
+				}
+			}
+		})
+	})
+
+	if element != nil {
+		element.Description = elementDescriptionBuilder.String()
+		elements = append(elements, *element)
+	}
+
+	page.Description = descriptionBuilder.String()
+	page.AspectParagraphs = elements
+	return page
 }

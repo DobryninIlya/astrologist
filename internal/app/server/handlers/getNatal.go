@@ -4,7 +4,6 @@ import (
 	"astrologist/internal/app/models"
 	"astrologist/internal/app/store/sqlstore"
 	pageAssembler "astrologist/internal/app/templates/page_assembler"
-	"fmt"
 	"github.com/sirupsen/logrus"
 	"net/http"
 )
@@ -21,15 +20,14 @@ func NewNatalHandler(store sqlstore.StoreInterface, log *logrus.Logger) func(w h
 			RespondAPI(w, r, http.StatusBadRequest, "Ошибка получения данных")
 			return
 		}
-		w.WriteHeader(http.StatusOK)
-		w.Write([]byte(pageAssembler.GetNatalResult()))
 		chart, err := store.NatalChart().GetChart(rawQuery, input)
 		if err != nil {
 			log.Errorf("%s : Ошибка получения натальной карты: %v", path, err.Error())
 			RespondAPI(w, r, http.StatusBadRequest, "Ошибка получения натальной карты")
 			return
 		}
-		fmt.Println(chart)
+		w.WriteHeader(http.StatusOK)
+		w.Write([]byte(pageAssembler.GetNatalResult(input, chart)))
 		return
 	}
 }

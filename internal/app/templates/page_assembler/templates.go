@@ -8,9 +8,15 @@ import (
 	"strings"
 )
 
-func GetNatalResult() string {
+func GetNatalResult(input models.NatalCardInput, output models.NatalCardOutput) template.HTML {
 	data := readFile(filepath.Join(htmlPath, "natal_result.html"))
-	return data
+	return template.HTML(fmt.Sprintf(data,
+		fmt.Sprintf("%02d-%02d-%d", input.BrithDay, input.BrithMonth, input.BrithYear),
+		fmt.Sprintf("%02d:%02d", input.BrithHour, input.BrithMinute),
+		input.City,
+		strings.Replace(output.MainImage, "\"", "&quot;", -1),
+		//url.QueryEscape(output.MainImage),
+	))
 }
 
 func GetNatalPlanetsCoordinatesResult(chart models.NatalCardOutput) template.HTML {
@@ -49,9 +55,9 @@ func GetPlanetDetailed(planet models.AstroData, chart models.NatalCardOutput, pl
 	aspectBlock := strings.Join(aspectList, "\n")
 
 	planetAspectDescription := getPlanetAspectDescription(planet.Position, planet.Degree, planet.PositionMeaning)
-
+	planetCaseTranslated := translatePlanetCase(planetCase)
 	data = fmt.Sprintf(data,
-		planetCase, planetCase, planetCase, planetCase,
+		planetCaseTranslated, planetCase, planetCase, planetCaseTranslated,
 		planet.Power, planet.Harmony,
 		planet.Description,
 		planetAspectDescription,
@@ -88,4 +94,17 @@ func GetDescriptionPlanet(chart models.NatalCardOutput, planetCase string) templ
 func GetNatalForm() template.HTML {
 	data := readFile(filepath.Join(htmlPath, "natal_form.html"))
 	return template.HTML(data)
+}
+
+func GetAspectDetailed(name models.AspectDetailedPage) template.HTML {
+	data := readFile(filepath.Join(htmlPath, "natal_aspect_detailed.html"))
+	var resultList strings.Builder
+	for _, val := range name.AspectParagraphs {
+		resultList.WriteString(getAspectParagraph(val.Header, val.Description))
+	}
+
+	return template.HTML(fmt.Sprintf(data, strings.Split(name.Header, ".")[0], name.Header,
+		name.Description,
+		resultList.String()))
+
 }

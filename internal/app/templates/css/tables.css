@@ -55,3 +55,9 @@ th, td {
     font-family: "HamburgSymbols_v2";
     font-size: 20px;
 }
+
+#planetTable {
+    display: block;
+    overflow-x: auto;
+
+}

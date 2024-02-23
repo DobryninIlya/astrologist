@@ -10,4 +10,5 @@ type NatalCardInput struct {
 	TimeZoneID  int    `json:"time_zone_id"`
 	Longitude   string `json:"longitude"`
 	Latitude    string `json:"latitude"`
+	City        string `json:"city"`
 }

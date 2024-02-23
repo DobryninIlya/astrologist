@@ -53,5 +53,6 @@ func natalInputParse(params url.Values, log *logrus.Logger) (models.NatalCardInp
 		log.Errorf("%s : Ошибка получения данных: %v", path, "Не все данные были получены")
 		return models.NatalCardInput{}, err
 	}
+	input.City = params.Get("c1")
 	return input, nil
 }

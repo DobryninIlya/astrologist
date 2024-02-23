@@ -9,7 +9,9 @@
 <body>
 
     <div class="header">
-        <img class="left-arrow" src="/static/img/arrow-left.svg" onclick="window.history.back()">
+        <div class="arrow">
+            <img class="left-arrow" src="/static/img/arrow-left.svg" onclick="window.history.back()">
+        </div>
         <p class="header_text">%v</p>
     </div>
     <div class="planets_detailed_page detailed_page">
@@ -20,14 +22,14 @@
                         <p class="aspect_name">%v</p>
                             <div class="aspect_desc">
                                 <p class="aspect_power_text">Сила:</p>
-                                <p class="aspect_power_text">%v</p>
+                                <p class="aspect_power_text colored_text">%v</p>
                              </div>
                     <div class="aspect_desc">
                         <p class="aspect_power_text">Гармония:</p>
-                        <p class="aspect_power_text">%v</p>
+                        <p class="aspect_power_text colored_text">%v</p>
                     </div>
                 </div>
-                <img class="right-arrow" src="/static/img/arrow-right.svg">
+<!--                <img class="right-arrow" src="/static/img/arrow-right.svg">-->
             </div>
         </div>
         <div class="main_block main_block_children">
@@ -45,5 +47,6 @@
             %v
         </div>
     </div>
+    <script src="/static/js/colored_text.js" defer></script>
 </body>
 </html>

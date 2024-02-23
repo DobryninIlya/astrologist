@@ -18,8 +18,10 @@ function validateData() {
     var day = document.getElementById('fd').value;
     var month = document.getElementById('month').value;
     var year = document.getElementById('year').value;
+    var hour = document.getElementById('hour').value;
+    var minute = document.getElementById('minute').value;
 
-    if (name === '' || day === '' || month === '' || year === '') {
+    if (name === '' || day === '' || month === '' || year === '' || hour === '' || minute === '' ) {
         showModal('Пожалуйста, заполните все поля формы.');
         return false;
     }
@@ -51,9 +53,10 @@ document.getElementById('natal_card_button').addEventListener('click', function(
     var latitude = encodeURIComponent(document.getElementById('latitude').value);
     var longitude = encodeURIComponent(document.getElementById('longitude').value);
     var hs = encodeURIComponent(document.getElementById('hs').value);
+    var city = encodeURIComponent(document.getElementById('birth_place').value);
 
     // Формируем строку URL-параметров
-    var queryParams = `?fn=${name}&fd=${fd}&fm=${fm}&fy=${fy}&c1=${c1}&ttz=${timezone}&fh=${hour}&fmn=${minute}&lt=${latitude}&ln=${longitude}&hs=${hs}&as=1&sb=1`;
+    var queryParams = `?fn=${name}&fd=${fd}&fm=${fm}&fy=${fy}&c1=${c1}&ttz=${timezone}&fh=${hour}&fmn=${minute}&lt=${latitude}&ln=${longitude}&hs=${hs}&as=1&sb=1&с1=${city}`;
 
     // Формируем полный URL для перехода
     var url = '/natalchart/' + queryParams;
