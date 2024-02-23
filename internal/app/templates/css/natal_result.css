@@ -106,6 +106,7 @@ body {
     max-height: 26px;
     white-space: nowrap;
     text-overflow: ellipsis;
+    margin-left: 10px;
 }
 
 .main_block {
