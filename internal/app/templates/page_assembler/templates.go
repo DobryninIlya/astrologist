@@ -11,6 +11,7 @@ import (
 func GetNatalResult(input models.NatalCardInput, output models.NatalCardOutput) template.HTML {
 	data := readFile(filepath.Join(htmlPath, "natal_result.html"))
 	return template.HTML(fmt.Sprintf(data,
+		input.FirstName,
 		fmt.Sprintf("%02d-%02d-%d", input.BrithDay, input.BrithMonth, input.BrithYear),
 		fmt.Sprintf("%02d:%02d", input.BrithHour, input.BrithMinute),
 		input.City,
