@@ -48,7 +48,7 @@ func extractAstroData(doc *goquery.Document, id string) (models.AstroData, error
 						content := s1.Text()
 						contentParts := strings.Split(content, "\n")
 						nameParts := strings.Split(contentParts[0], "  ")
-						if len(nameParts) == 0 {
+						if len(nameParts) != 2 {
 							return
 						}
 						data.Position = nameParts[1]

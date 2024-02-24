@@ -33,6 +33,7 @@ autocompleteList.addEventListener('click', function(event) {
 // Функция для отображения результатов
 function displayAutocompleteResults(results) {
     var autocompleteList = document.getElementById('autocomplete-list');
+
     autocompleteList.innerHTML = ''; // Очищаем предыдущие результаты
 
     // Добавляем новые результаты в список
@@ -76,23 +77,11 @@ function fetchAutocomplete(request) {
     xhr.send(); // Для GET запросов не нужно отправлять тело запроса
 }
 
-function displayAutocompleteResults(results) {
-    var autocompleteList = document.getElementById('autocomplete-list');
-    autocompleteList.innerHTML = ''; // Очищаем предыдущие результаты
 
-    // Добавляем новые результаты в список
-    for (var i = 0; i < Math.min(results.length, 3); i++) {
-        var result = results[i];
-        var listItem = document.createElement('li');
-        listItem.textContent = result.name + ' (' + result.country_name + ')';
-        listItem.setAttribute('data-latitude', result.latitude);
-        listItem.setAttribute('data-longitude', result.longitude);
-        autocompleteList.appendChild(listItem);
-    }
-}
 
 function handleAutocomplete(event) {
     var inputValue = event.target.value;
+    autocompleteList.style.display = 'block';
     fetchAutocomplete(inputValue);
 }
 

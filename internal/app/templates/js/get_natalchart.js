@@ -24,13 +24,34 @@ function validateData() {
     var latitude = document.getElementById('latitude').value;
     var longitude = document.getElementById('longitude').value;
 
-    if (latitude=="" && longitude=="") {
+    if (latitude=="" || longitude=="") {
         showModal("Пожалуйста, выберите место рождения из выпадающего списка или введите точные координаты, если поиск не дал результатов")
         return false;
     }
 
-    if (name === '' || day === '' || month === '' || year === '')  {
+    if (name === '' || day === '' || month === '' || year === '' || minute === '' || hour === '' )  {
         showModal('Пожалуйста, заполните все поля формы.');
+        return false;
+    }
+
+    if (day < 1 || day > 31) {
+        showModal('Пожалуйста, введите корректный день рождения.');
+        return false;
+    }
+    if (month < 1 || month > 12) {
+        showModal('Пожалуйста, введите корректный месяц рождения.');
+        return false;
+    }
+    if (year < 1800 || year > 2100) {
+        showModal('Пожалуйста, введите корректный год рождения.');
+        return false;
+    }
+    if (hour < 0 || hour > 23) {
+        showModal('Пожалуйста, введите корректный час рождения.');
+        return false;
+    }
+    if (parseInt(minute) < 0 || parseInt(minute) > 59) {
+        showModal('Пожалуйста, введите корректную минуту рождения.');
         return false;
     }
     return true;
