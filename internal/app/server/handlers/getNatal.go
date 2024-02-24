@@ -23,7 +23,7 @@ func NewNatalHandler(store sqlstore.StoreInterface, log *logrus.Logger) func(w h
 		chart, err := store.NatalChart().GetChart(rawQuery, input)
 		if err != nil {
 			log.Errorf("%s : Ошибка получения натальной карты: %v", path, err.Error())
-			RespondAPI(w, r, http.StatusBadRequest, "Ошибка получения натальной карты")
+			RespondAPI(w, r, http.StatusBadRequest, "Ошибка получения натальной карты "+err.Error())
 			return
 		}
 		w.WriteHeader(http.StatusOK)

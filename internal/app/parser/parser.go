@@ -2,6 +2,7 @@ package parser
 
 import (
 	"astrologist/internal/app/models"
+	"errors"
 	"fmt"
 	"github.com/PuerkitoBio/goquery"
 	"io"
@@ -27,6 +28,9 @@ func GetNatalChart(input models.NatalCardInput) (models.NatalCardOutput, error) 
 	resp, err := http.DefaultClient.Do(req)
 	if err != nil {
 		return models.NatalCardOutput{}, err
+	}
+	if resp.StatusCode != 200 {
+		return models.NatalCardOutput{}, errors.New("Источник данных вернул ошибку.")
 	}
 	defer resp.Body.Close()
 	return ParseNatalDetails(resp.Body)

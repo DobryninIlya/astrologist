@@ -138,7 +138,7 @@ func extractTables(doc *goquery.Document) ([]string, error) {
 		tables = append(tables, tableHTML)
 	})
 
-	if len(tables) < 4 {
+	if len(tables) < 5 {
 		return nil, fmt.Errorf("not enough planet tables found")
 	} // Возвращаем только первые четыре таблицы
 	return tables[1:4], nil
