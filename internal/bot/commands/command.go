@@ -13,8 +13,8 @@ var (
 
 func init() {
 	CommandList = Commands{Commands: make([]Command, 0)}
+	RegisterCommand([]string{"натальная карта", "рассчитать", "расклад", "/start", "start"}, cmd.AstrologCommandProcessor, "Astrologist")
 	RegisterCommand([]string{"/start", "start"}, cmd.StartCommandProcessor, "Start command")
-	RegisterCommand([]string{"натальная карта", "рассчитать", "расклад"}, cmd.AstrologCommandProcessor, "Start command")
 
 }
 
