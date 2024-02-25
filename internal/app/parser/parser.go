@@ -3,11 +3,12 @@ package parser
 import (
 	"astrologist/internal/app/models"
 	"errors"
-	"fmt"
 	"github.com/PuerkitoBio/goquery"
 	"io"
 	"log"
 	"net/http"
+	"net/url"
+	"strconv"
 	"strings"
 )
 
@@ -18,13 +19,26 @@ const (
 )
 
 func GetNatalChart(input models.NatalCardInput) (models.NatalCardOutput, error) {
-	urlParams := fmt.Sprintf("?fn=%v&fd=%v&fm=%v&fy=%v&fh=%v&fmn=%v&ttz=%v&lt=%v&ln=%v&hs=P&as=1&sb=1",
-		input.FirstName, input.BrithDay, input.BrithMonth, input.BrithYear, input.BrithHour, input.BrithMinute, input.TimeZoneID, input.Latitude, input.Longitude)
-	req, err := http.NewRequest("GET", natalURL+urlParams, nil)
+	params := url.Values{}
+	params.Set("fn", input.FirstName)
+	params.Set("fd", strconv.Itoa(input.BrithDay))
+	params.Set("fm", strconv.Itoa(input.BrithMonth))
+	params.Set("fy", strconv.Itoa(input.BrithYear))
+	params.Set("fh", strconv.Itoa(input.BrithHour))
+	params.Set("fmn", strconv.Itoa(input.BrithMinute))
+	params.Set("ttz", strconv.Itoa(input.TimeZoneID))
+	params.Set("lt", input.Latitude)
+	params.Set("ln", input.Longitude)
+	params.Set("hs", "P")
+	params.Set("as", "1")
+	params.Set("sb", "1")
+
+	req, err := http.NewRequest("GET", natalURL+"?"+params.Encode(), nil)
 	if err != nil {
 		return models.NatalCardOutput{}, err
 	}
 	req.Header.Set("Content-Type", "application/x-www-form-urlencoded")
+
 	resp, err := http.DefaultClient.Do(req)
 	if err != nil {
 		return models.NatalCardOutput{}, err
@@ -33,6 +47,7 @@ func GetNatalChart(input models.NatalCardInput) (models.NatalCardOutput, error) 
 		return models.NatalCardOutput{}, errors.New("Источник данных вернул ошибку.")
 	}
 	defer resp.Body.Close()
+
 	return ParseNatalDetails(resp.Body)
 }
 
